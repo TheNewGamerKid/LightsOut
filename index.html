@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="lights-out.css">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lights Out</title>
-</head>
-<body>
-  <button id="title">
-    Lights Out
-  </button>
-  <div id="game">
-    
-  </div>
-  <script src="lights-out.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" href="icon.jpg" />
+    <link rel="stylesheet" href="lights-out.css" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Lights Out</title>
+  </head>
+  <body>
+    <button id="title">Lights Out</button>
+    <div id="game"></div>
+    <script src="sw-registration.js"></script>
+    <script src="lights-out.js" type="module"></script>
+  </body>
 </html>
