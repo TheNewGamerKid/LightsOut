@@ -1,11 +1,10 @@
-
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: black;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 100vh;
 }
 
@@ -15,15 +14,9 @@ body {
   border: 0px;
   font-size: 50px;
   margin-bottom: 40px;
-  text-shadow:
-    0 0 7px #EDEDFF,
-    0 0 10px #ADADFF,
-    0 0 21px #7D7DFF,
-    0 0 42px #4D4DFF,
-    0 0 82px #4D4DFF,
-    0 0 92px #4D4DFF,
-    0 0 102px #4D4DFF,
-    0 0 151px #4D4DFF;
+  text-shadow: 0 0 7px #ededff, 0 0 10px #adadff, 0 0 21px #7d7dff,
+    0 0 42px #4d4dff, 0 0 82px #4d4dff, 0 0 92px #4d4dff, 0 0 102px #4d4dff,
+    0 0 151px #4d4dff;
 }
 
 #game {
@@ -76,35 +69,29 @@ body {
 .match-size-7 {
   width: 13%;
   padding-top: 13%;
-  margin: .7%;
+  margin: 0.7%;
   border-radius: 3.5px;
 }
 
 .match-size-5 {
   width: 19%;
   padding-top: 19%;
-  margin: .5%;
+  margin: 0.5%;
   border-radius: 3.5px;
 }
 
 .match-size-9 {
   width: 10%;
   padding-top: 10%;
-  margin: .6%;
+  margin: 0.6%;
   border-radius: 2.5px;
 }
 
 .btn {
   color: white;
-  text-shadow:
-    0 0 7px #EDEDFF,
-    0 0 10px #ADADFF,
-    0 0 21px #7D7DFF,
-    0 0 42px #4D4DFF,
-    0 0 82px #4D4DFF,
-    0 0 92px #4D4DFF,
-    0 0 102px #4D4DFF,
-    0 0 151px #4D4DFF;
+  text-shadow: 0 0 7px #ededff, 0 0 10px #adadff, 0 0 21px #7d7dff,
+    0 0 42px #4d4dff, 0 0 82px #4d4dff, 0 0 92px #4d4dff, 0 0 102px #4d4dff,
+    0 0 151px #4d4dff;
 }
 
 .difficulty {
@@ -147,8 +134,8 @@ body {
   z-index: 10;
   border: 0;
   width: 30%;
-  box-sizing: border-box; 
-  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
   font-size: 20px;
 }
 
@@ -182,14 +169,23 @@ body {
 }
 
 .off {
-  background-color: #4D4DFF;
-  opacity: .5;
+  background-color: #4d4dff;
+  opacity: 0.5;
 }
 
 .on {
   color: white;
-  box-shadow:
-    0 0 7px #EDEDFF,
-    0 0 10px #ADADFF,
-    0 0 21px #7D7DFF;
+  box-shadow: 0 0 7px #ededff, 0 0 10px #adadff, 0 0 21px #7d7dff;
+}
+
+#update {
+  background-color: #222;
+  border-radius: 10px;
+  position: absolute;
+  color: white;
+  padding: 10px;
+  display: none;
+  bottom: 10px;
+  left: 10px;
+  border: 0;
 }
