@@ -13,8 +13,6 @@ const STATIC_ASSESTS = [
   '/',
 ];
 
-let devState = false;
-
 channel.onmessage = (channelEvent) => {
   switch (channelEvent.data.type) {
     case 'UPDATE':
@@ -22,26 +20,15 @@ channel.onmessage = (channelEvent) => {
       channel.postMessage({
         type: 'UPDATED',
       });
-    case 'SET_DEV_STATE':
-      devState = channelEvent.data.payload;
-      caches.keys().then((keys) => {
-        const OLD_CACHES = keys.filter((key) => !key.includes(CACHE_VERSION));
-
-        if (OLD_CACHES.length) {
-          OLD_CACHES.map((key) => caches.delete(key));
-        }
-      });
   }
 };
 
 self.addEventListener('install', (event) => {
-  if (!devState) {
-    event.waitUntil(
-      caches.open(`static-site-${CACHE_VERSION}`).then((cache) => {
-        cache.addAll(STATIC_ASSESTS);
-      })
-    );
-  }
+  event.waitUntil(
+    caches.open(`static-site-${CACHE_VERSION}`).then((cache) => {
+      cache.addAll(STATIC_ASSESTS);
+    })
+  );
 });
 
 self.addEventListener('activate', (event) => {
@@ -57,11 +44,9 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  if (!devState) {
-    event.respondWith(
-      caches.match(event.request).then((res) => {
-        return res || fetch(event.request);
-      })
-    );
-  }
+  event.respondWith(
+    caches.match(event.request).then((res) => {
+      return res || fetch(event.request);
+    })
+  );
 });

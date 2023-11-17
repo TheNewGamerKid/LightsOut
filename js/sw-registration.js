@@ -1,18 +1,5 @@
-import { getCookie, setCookie } from './utils.js';
-
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && window.location.host !== '127.0.0.1:5500') {
   const channel = new BroadcastChannel('lights-out-sw');
-
-  window.toggleDev = () => {
-    const isDev = getCookie('isDev');
-
-    setCookie('isDev', !isDev, 400);
-
-    channel.postMessage({
-      type: 'SET_DEV_STATE',
-      payload: isDev,
-    });
-  };
 
   channel.onmessage = (event) => {
     switch (event.data.type) {
@@ -23,11 +10,6 @@ if ('serviceWorker' in navigator) {
 
   window.addEventListener('load', async () => {
     const registration = await navigator.serviceWorker.register('../sw.js');
-
-    channel.postMessage({
-      payload: getCookie('isDev'),
-      type: 'SET_DEV_STATE',
-    });
 
     registration.addEventListener('updatefound', () => {
       registration.installing.addEventListener('statechange', (event) => {

@@ -31,8 +31,6 @@ const homeBtn = document.querySelector('#title');
 let history = [];
 const chance = 0.35;
 
-window.isDev = false;
-
 const undoHandler = (size) => {
   console.log(history);
   if (history.length > 1) {
